@@ -1,0 +1,10 @@
+D:\214szft\quarto\quarto\quarto\bin\Debug\quarto.exe.config
+D:\214szft\quarto\quarto\quarto\bin\Debug\quarto.exe
+D:\214szft\quarto\quarto\quarto\bin\Debug\quarto.pdb
+D:\214szft\quarto\quarto\quarto\obj\Debug\quarto.csprojAssemblyReference.cache
+D:\214szft\quarto\quarto\quarto\obj\Debug\quarto.Form1.resources
+D:\214szft\quarto\quarto\quarto\obj\Debug\quarto.Properties.Resources.resources
+D:\214szft\quarto\quarto\quarto\obj\Debug\quarto.csproj.GenerateResource.cache
+D:\214szft\quarto\quarto\quarto\obj\Debug\quarto.csproj.CoreCompileInputs.cache
+D:\214szft\quarto\quarto\quarto\obj\Debug\quarto.exe
+D:\214szft\quarto\quarto\quarto\obj\Debug\quarto.pdb
