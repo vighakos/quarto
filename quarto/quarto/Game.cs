@@ -25,9 +25,14 @@ namespace quarto
         {
             // player kezdőke
 
-            // lista feltöltőke
+            Graphics myGraphics = base.CreateGraphics();
+            Pen myPen = new Pen(Color.Black);
+            SolidBrush mySolidBrush = new SolidBrush(Color.Black);
+            myGraphics.DrawEllipse(myPen, 50, 50, 150, 150);
 
-            
+
+            // lista feltöltőke
+            // i / 16 % 2, i / 8 % 2, i / 4 % 2, i % 2
         }
     }
 }
