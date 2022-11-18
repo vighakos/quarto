@@ -12,7 +12,7 @@ namespace quarto
 {
     public partial class Game : Form
     {
-        public Game()
+        public Game(string p1name, string p2name)
         {
             InitializeComponent();
         }

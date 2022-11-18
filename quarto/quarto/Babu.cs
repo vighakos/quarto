@@ -8,5 +8,14 @@ namespace quarto
 {
     class Babu
     {
+        public bool Szmotyi, Szin, Magas, Karika;
+
+        public Babu(bool szmotyi, bool szin, bool magas, bool karika)
+        {
+            Szmotyi = szmotyi;
+            Szin = szin;
+            Magas = magas;
+            Karika = karika;
+        }
     }
 }
