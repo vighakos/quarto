@@ -12,9 +12,22 @@ namespace quarto
 {
     public partial class Game : Form
     {
-        public Game()
+        static List<Babu> babuk;
+        static Player p1, p2, currentPlayer;
+        public Game(string p1name, string p2name)
         {
             InitializeComponent();
+
+            Setup(p1name, p2name);
+        }
+
+        private void Setup(string p1name, string p2name)
+        {
+            // player kezdőke
+
+            // lista feltöltőke
+
+            
         }
     }
 }

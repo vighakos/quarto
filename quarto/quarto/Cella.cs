@@ -8,6 +8,7 @@ namespace quarto
 {
     class Cella
     {
-
+        static Babu babu;
+        static int X, Y;
     }
 }
