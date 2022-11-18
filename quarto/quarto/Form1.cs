@@ -16,5 +16,16 @@ namespace quarto
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (player1.Text == "" || player2.Text == "") { MessageBox.Show("Írj be egy nevet!", "Error"); return; }
+            if (player1.Text == player2.Text) { MessageBox.Show("A nevek nem egyezhetnek", "Error"); return; }
+
+            Form gameForm = new Game(player1.Text, player2.Text);
+            this.Visible = false;
+            gameForm.ShowDialog();
+            Close();
+        }
     }
 }
