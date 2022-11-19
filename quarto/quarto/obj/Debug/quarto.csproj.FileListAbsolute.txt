@@ -15,3 +15,14 @@ H:\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.csproj.Generate
 H:\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.csproj.CoreCompileInputs.cache
 H:\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.exe
 H:\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.pdb
+X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\bin\Debug\quarto.exe.config
+X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\bin\Debug\quarto.exe
+X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\bin\Debug\quarto.pdb
+X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.csprojAssemblyReference.cache
+X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.Form1.resources
+X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.Properties.Resources.resources
+X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.csproj.GenerateResource.cache
+X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.csproj.CoreCompileInputs.cache
+X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.exe
+X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.pdb
+X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.Game.resources
