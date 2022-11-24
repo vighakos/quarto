@@ -11,14 +11,14 @@ namespace quarto
     {
         public int ID;
         public Image Img;
-        public bool Szmotyi, Vilagos, Nagy, Karika;
+        public bool Szmotyi, Sotet, Nagy, Karika;
 
-        public Babu(int id, bool szmotyi, bool vilagos, bool nagy, bool karika)
+        public Babu(int id, bool sotet, bool szmotyi, bool nagy, bool karika)
         {
             ID = id;
-            Img = Image.FromFile($"{ID}.png");
+            //Img = Image.FromFile($"{ID}.png");
+            Sotet = sotet;
             Szmotyi = szmotyi;
-            Vilagos = vilagos;
             Nagy = nagy;
             Karika = karika;
         }
