@@ -32,7 +32,7 @@ namespace quarto
             for (int i = 0; i < 16; i++)
             {
                 babuk.Add(new Babu(i, Convert.ToBoolean(i / 8 % 2), Convert.ToBoolean(i / 4 % 2), Convert.ToBoolean(i / 2 % 2), Convert.ToBoolean(i % 2)));
-                comboBox1.Items.Add($"{babuk[i].ID}: {babuk[i].Szmotyi}, {babuk[i].Feher}, {babuk[i].Nagy}, {babuk[i].Karika}");
+                comboBox1.Items.Add($"{babuk[i].ID}: {babuk[i].Szmotyi}, {babuk[i].Vilagos}, {babuk[i].Nagy}, {babuk[i].Karika}");
             }
 
             cellak = new List<Cella>();
@@ -73,6 +73,7 @@ namespace quarto
                 {
                     Babu selectedBabu = babuk.Find(x => x.ID == Convert.ToInt32(comboBox1.SelectedItem.ToString().Split(':')[0]));
                     kattolt.Babu = selectedBabu;
+                    kattolt.Pbox.Image = selectedBabu.Img;
                     comboBox1.Items.RemoveAt(comboBox1.SelectedIndex);
                     babuk.Remove(selectedBabu);
                     kattolt.Szabad = false;
@@ -81,7 +82,7 @@ namespace quarto
             }
             else
             {
-                MessageBox.Show($"{kattolt.X}, {kattolt.Y}: {kattolt.Babu.ID}, {kattolt.Babu.Szmotyi}, {kattolt.Babu.Feher}, {kattolt.Babu.Nagy}, {kattolt.Babu.Karika}");
+                MessageBox.Show($"{kattolt.X}, {kattolt.Y}: {kattolt.Babu.ID}, {kattolt.Babu.Szmotyi}, {kattolt.Babu.Vilagos}, {kattolt.Babu.Nagy}, {kattolt.Babu.Karika}");
             }
 
         }
