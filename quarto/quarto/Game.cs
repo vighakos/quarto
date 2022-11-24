@@ -32,7 +32,7 @@ namespace quarto
             for (int i = 0; i < 16; i++)
             {
                 babuk.Add(new Babu(i, Convert.ToBoolean(i / 8 % 2), Convert.ToBoolean(i / 4 % 2), Convert.ToBoolean(i / 2 % 2), Convert.ToBoolean(i % 2)));
-                comboBox1.Items.Add($"{babuk[i].ID}: {babuk[i].Szmotyi}, {babuk[i].Szin}, {babuk[i].Magas}, {babuk[i].Karika}");
+                comboBox1.Items.Add($"{babuk[i].ID}: {babuk[i].Szmotyi}, {babuk[i].Feher}, {babuk[i].Nagy}, {babuk[i].Karika}");
             }
 
             cellak = new List<Cella>();
@@ -81,7 +81,7 @@ namespace quarto
             }
             else
             {
-                MessageBox.Show($"{kattolt.X}, {kattolt.Y}: {kattolt.Babu.ID}, {kattolt.Babu.Szmotyi}, {kattolt.Babu.Szin}, {kattolt.Babu.Magas}, {kattolt.Babu.Karika}");
+                MessageBox.Show($"{kattolt.X}, {kattolt.Y}: {kattolt.Babu.ID}, {kattolt.Babu.Szmotyi}, {kattolt.Babu.Feher}, {kattolt.Babu.Nagy}, {kattolt.Babu.Karika}");
             }
 
         }

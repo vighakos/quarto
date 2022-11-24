@@ -26,3 +26,7 @@ X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.csproj.C
 X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.exe
 X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.pdb
 X:\a\suli\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.Game.resources
+H:\214szft\aszmo projektek\quarto\quarto\quarto\bin\Debug\quarto.exe.config
+H:\214szft\aszmo projektek\quarto\quarto\quarto\bin\Debug\quarto.exe
+H:\214szft\aszmo projektek\quarto\quarto\quarto\bin\Debug\quarto.pdb
+H:\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.Game.resources
