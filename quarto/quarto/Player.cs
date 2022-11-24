@@ -8,13 +8,12 @@ namespace quarto
 {
     class Player
     {
-        public string Name, Color;
+        public string Name;
         public int Victories;
 
-        public Player(string name, string color)
+        public Player(string name)
         {
             Name = name;
-            Color = color;
             Victories = 0;
         }
     }
