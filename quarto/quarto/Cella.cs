@@ -9,8 +9,18 @@ namespace quarto
 {
     class Cella
     {
-        static Panel panel;
-        static Babu babu;
-        static int X, Y;
+        public PictureBox Pbox;
+        public Babu Babu;
+        public int X, Y;
+        public bool Szabad;
+
+        public Cella(PictureBox pbox, int x, int y, bool szabad)
+        {
+            Pbox = pbox;
+            Babu = null;
+            X = x;
+            Y = y;
+            Szabad = szabad;
+        }
     }
 }
