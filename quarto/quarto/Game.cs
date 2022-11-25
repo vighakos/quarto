@@ -73,7 +73,7 @@ namespace quarto
                 {
                     Babu selectedBabu = babuk.Find(x => x.ID == Convert.ToInt32(comboBox1.SelectedItem.ToString().Split(':')[0]));
                     kattolt.Babu = selectedBabu;
-                    //kattolt.Pbox.Image = selectedBabu.Img;
+                    kattolt.Pbox.Image = selectedBabu.Img;
                     comboBox1.Items.RemoveAt(comboBox1.SelectedIndex);
                     babuk.Remove(selectedBabu);
                     kattolt.Szabad = false;

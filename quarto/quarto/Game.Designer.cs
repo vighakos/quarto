@@ -29,6 +29,7 @@ namespace quarto
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.p1Lbl = new System.Windows.Forms.Label();
             this.p2Lbl = new System.Windows.Forms.Label();
             this.kijonLbl = new System.Windows.Forms.Label();
@@ -94,6 +95,7 @@ namespace quarto
             this.Controls.Add(this.kijonLbl);
             this.Controls.Add(this.p2Lbl);
             this.Controls.Add(this.p1Lbl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
             this.Text = "Game";
             this.ResumeLayout(false);
