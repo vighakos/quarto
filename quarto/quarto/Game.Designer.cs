@@ -29,6 +29,7 @@ namespace quarto
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.p1Lbl = new System.Windows.Forms.Label();
             this.p2Lbl = new System.Windows.Forms.Label();
             this.kijonLbl = new System.Windows.Forms.Label();
@@ -88,12 +89,15 @@ namespace quarto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(468, 252);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.kijonLbl);
             this.Controls.Add(this.p2Lbl);
             this.Controls.Add(this.p1Lbl);
+            this.DoubleBuffered = true;
             this.Name = "Game";
             this.Text = "Game";
             this.ResumeLayout(false);
