@@ -32,7 +32,7 @@ namespace quarto
             for (int i = 0; i < 16; i++)
             {
                 babuk.Add(new Babu(i, Convert.ToBoolean(i / 8 % 2), Convert.ToBoolean(i / 4 % 2), Convert.ToBoolean(i / 2 % 2), Convert.ToBoolean(i % 2)));
-                comboBox1.Items.Add($"{babuk[i].ID}: {babuk[i].Sotet}, {babuk[i].Szmotyi}, {babuk[i].Nagy}, {babuk[i].Karika}");
+                comboBox1.Items.Add(babuk[i].Kiir());
             }
 
             cellak = new List<Cella>();
@@ -45,10 +45,12 @@ namespace quarto
                         Location = new Point(250 + j * 50, 10 + i * 50),
                         Size = new Size(40, 40),
                         BackColor = Color.White,
-                        Name = $"{i}_{j}"
+                        Name = $"{i}_{j}",
+                        SizeMode = PictureBoxSizeMode.CenterImage
                     };
                     cellak.Add(new Cella(uj, i, j, true));
                     uj.Click += new EventHandler(Cella_Click);
+                    uj.MouseHover += new EventHandler(Cella_Hover);
                     Controls.Add(uj);
                 }
             }
@@ -80,11 +82,20 @@ namespace quarto
                     selectedBabu = null;
                 }
             }
-            else
-            {
-                MessageBox.Show($"{kattolt.X}, {kattolt.Y}: {kattolt.Babu.ID}, {kattolt.Babu.Sotet}, {kattolt.Babu.Szmotyi}, {kattolt.Babu.Nagy}, {kattolt.Babu.Karika}");
-            }
+        }
 
+        private void p_Valaszt(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Cella_Hover(object sender, EventArgs e)
+        {
+            PictureBox item = (PictureBox)sender;
+            Cella hover = cellak.Find(x => x.X == Convert.ToInt32(item.Name.Split('_')[0]) && x.Y == Convert.ToInt32(item.Name.Split('_')[1]));
+
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(hover.Pbox, hover.Babu == null ? "Üres" : hover.Babu.Kiir());
         }
 
         private void UpdateLabels()
