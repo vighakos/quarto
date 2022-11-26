@@ -10,16 +10,16 @@ namespace quarto
     class Babu
     {
         public int ID;
-        //private Image img;
-        public bool Szmotyi, Szin, Magas, Karika;
+        public Image Img;
+        public bool Szmotyi, Sotet, Nagy, Karika;
 
-        public Babu(int id, bool szmotyi, bool szin, bool magas, bool karika)
+        public Babu(int id, bool sotet, bool szmotyi, bool nagy, bool karika)
         {
             ID = id;
-            //img = Image.FromFile($"{ID}.png");
+            //Img = Image.FromFile($"{ID}.png");
+            Sotet = sotet;
             Szmotyi = szmotyi;
-            Szin = szin;
-            Magas = magas;
+            Nagy = nagy;
             Karika = karika;
         }
     }
