@@ -13,10 +13,12 @@ namespace quarto
     public partial class Game : Form
     {
         static List<Cella> cellak;
+        static List<Cella> lerakottBabuk;
         static List<Babu> babuk;
         static Player p1, p2, currentPlayer;
         static PictureBox selectedPbox = null;
         static bool kovetkezo = true;
+
         public Game(string p1name, string p2name)
         {
             InitializeComponent();
@@ -57,6 +59,8 @@ namespace quarto
                 }
             }
 
+            lerakottBabuk = new List<Cella>();
+
             UpdateLabels();
         }
 
@@ -64,35 +68,80 @@ namespace quarto
         {            
             if (!kovetkezo)
             {
-                selectedPbox.BackColor = Color.Transparent;
-                selectedPbox.Visible = false;
-                selectedPbox = null;
-
                 PictureBox item = (PictureBox)sender;
-
                 Cella kattolt = cellak.Find(x => x.X == Convert.ToInt32(item.Name.Split('_')[0]) && x.Y == Convert.ToInt32(item.Name.Split('_')[1]));
 
                 if (kattolt.Szabad)
                 {
-                    if (comboBox1.SelectedIndex == -1)
-                    {
-                        MessageBox.Show("Válassz ki egy bábut!");
-                        return;
-                    }
-                    else
-                    {
-                        Babu selectedBabu = babuk.Find(x => x.ID == Convert.ToInt32(comboBox1.SelectedItem.ToString().Split(':')[0]));
-                        kattolt.Babu = selectedBabu;
-                        kattolt.Pbox.Image = selectedBabu.Img;
-                        comboBox1.Items.RemoveAt(comboBox1.SelectedIndex);
-                        babuk.Remove(selectedBabu);
-                        kattolt.Szabad = false;
-                        selectedBabu = null;
-                    }
+                    Babu selectedBabu = babuk.Find(x => x.ID == Convert.ToInt32(selectedPbox.Name.Split('_')[1]));
+                    kattolt.Babu = selectedBabu;
+                    kattolt.Pbox.Image = selectedBabu.Img;
+                    comboBox1.Items.RemoveAt(comboBox1.SelectedIndex);
+                    babuk.Remove(selectedBabu);
+                    kattolt.Szabad = false;
+                    
+                    selectedPbox.BackColor = Color.Transparent;
+                    selectedPbox.Visible = false;
+                    selectedPbox = null;
+
+                    lerakottBabuk.Add(kattolt);
+
+                    Check(kattolt);
+
+                    kovetkezo = true;
+                    button1.Enabled = true;
                 }
-                kovetkezo = true;
-                button1.Enabled = true;
             }
+        }
+
+        private void Check(Cella kattolt)
+        {
+            List<Cella> kattoltSor = lerakottBabuk.FindAll(x => x.Y == kattolt.Y);
+            List<Cella> kattoltOszlop = lerakottBabuk.FindAll(x => x.X == kattolt.X);
+
+            if (kattoltSor.Count == 4) negyCheck(kattoltSor);
+            if (kattoltOszlop.Count == 4) negyCheck(kattoltOszlop);
+        }
+
+        private void negyCheck(List<Cella> lista)
+        {
+            /*
+            for (int i = 0; i < lista.Count; i++)
+            {
+                int counter = 0;
+                bool talalt = false;
+                for (int j = 0; j < lista.Count; j++)
+                {
+                    if (lista[i].Babu.Sotet == lista[j].Babu.Sotet)
+                    {
+                        counter++;
+                        if (counter == 4) Win();
+                    }
+                    if (lista[i].Babu.Szmotyi == lista[j].Babu.Szmotyi)
+                    {
+                        counter++;
+                        if (counter == 4) Win();
+                    }
+                    if (lista[i].Babu.Nagy == lista[j].Babu.Nagy)
+                    {
+                        counter++;
+                        if (counter == 4) Win();
+                    }
+                    if (lista[i].Babu.Karika == lista[j].Babu.Karika)
+                    {
+                        counter++;
+                        if (counter == 4) Win();
+                    }
+                    if (talalt) continue;
+                    else break;
+                }
+            }
+            */
+        }
+
+        private void Win()
+        {
+            MessageBox.Show($"{currentPlayer.Name} nyert");
         }
 
         private void p_Valaszt(object sender, EventArgs e)
@@ -122,10 +171,7 @@ namespace quarto
                 button1.Enabled = false;
                 UpdateLabels();
             }
-            else
-            {
-                MessageBox.Show("Válassz ki egy bábut");
-            }
+            else MessageBox.Show("Válassz ki egy bábut");
         }
 
         private void Cella_Hover(object sender, EventArgs e)
