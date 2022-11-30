@@ -15,6 +15,7 @@ namespace quarto
         static List<Cella> cellak;
         static List<Babu> babuk;
         static Player p1, p2, currentPlayer;
+        static PictureBox selectedPbox = null;
         public Game(string p1name, string p2name)
         {
             InitializeComponent();
@@ -82,11 +83,27 @@ namespace quarto
                     selectedBabu = null;
                 }
             }
+
+            if (selectedPbox != null)
+            {
+                selectedPbox.BackColor = Color.Transparent;
+                selectedPbox.Visible = false;
+                selectedPbox = null;
+            }
         }
 
         private void p_Valaszt(object sender, EventArgs e)
         {
-            
+            PictureBox item = (PictureBox)sender;
+            if (selectedPbox != null && item.Name != selectedPbox.Name)
+            {
+                selectedPbox.BackColor = Color.Transparent;
+                selectedPbox = item;
+            }
+            else if (selectedPbox == null) selectedPbox = item;
+
+            selectedPbox.BackColor = Color.Green;
+            comboBox1.SelectedItem = babuk.Find(x => x.ID.ToString() == selectedPbox.Name.Split('_')[1]).Kiir();
         }
 
         private void Cella_Hover(object sender, EventArgs e)
