@@ -89,6 +89,16 @@ namespace quarto
             
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ()
+            {
+                kijonLbl.Visible = true;
+                currentPlayer = currentPlayer == p1 ? p2 : p1;
+                UpdateLabels();
+            }            
+        }
+
         private void Cella_Hover(object sender, EventArgs e)
         {
             PictureBox item = (PictureBox)sender;

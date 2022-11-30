@@ -99,6 +99,7 @@ namespace quarto
             this.kijonLbl.TabIndex = 2;
             this.kijonLbl.Text = "text";
             this.kijonLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.kijonLbl.Visible = false;
             // 
             // comboBox1
             // 
@@ -108,6 +109,7 @@ namespace quarto
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(180, 21);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -344,6 +346,7 @@ namespace quarto
             this.Controls.Add(this.p2Lbl);
             this.Controls.Add(this.p1Lbl);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(484, 425);
             this.MinimumSize = new System.Drawing.Size(484, 425);
             this.Name = "Game";
