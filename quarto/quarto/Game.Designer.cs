@@ -93,7 +93,7 @@ namespace quarto
             // kijonLbl
             // 
             this.kijonLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kijonLbl.Location = new System.Drawing.Point(12, 92);
+            this.kijonLbl.Location = new System.Drawing.Point(10, 92);
             this.kijonLbl.Name = "kijonLbl";
             this.kijonLbl.Size = new System.Drawing.Size(183, 25);
             this.kijonLbl.TabIndex = 2;
@@ -103,6 +103,7 @@ namespace quarto
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(15, 120);
             this.comboBox1.Name = "comboBox1";
@@ -115,8 +116,9 @@ namespace quarto
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 40);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Valami okos szöveg amit később kell kitalálni";
+            this.button1.Text = "Bábu kiválasztása lock";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // p_0
             // 
@@ -344,6 +346,7 @@ namespace quarto
             this.Controls.Add(this.p2Lbl);
             this.Controls.Add(this.p1Lbl);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(484, 425);
             this.MinimumSize = new System.Drawing.Size(484, 425);
             this.Name = "Game";

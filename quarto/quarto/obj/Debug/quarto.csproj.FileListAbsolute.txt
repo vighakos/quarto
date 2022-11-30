@@ -42,3 +42,14 @@ C:\Users\kerekesistvan\Source\Repos\vighakos\quarto\quarto\quarto\obj\Debug\quar
 C:\Users\kerekesistvan\Source\Repos\vighakos\quarto\quarto\quarto\obj\Debug\quarto.exe
 C:\Users\kerekesistvan\Source\Repos\vighakos\quarto\quarto\quarto\obj\Debug\quarto.pdb
 H:\214szft\aszmo projektek\quarto\quarto\quarto\obj\Debug\quarto.csproj.AssemblyReference.cache
+D:\214szft\quarrto\quarto\quarto\bin\Debug\quarto.exe.config
+D:\214szft\quarrto\quarto\quarto\bin\Debug\quarto.exe
+D:\214szft\quarrto\quarto\quarto\bin\Debug\quarto.pdb
+D:\214szft\quarrto\quarto\quarto\obj\Debug\quarto.csproj.AssemblyReference.cache
+D:\214szft\quarrto\quarto\quarto\obj\Debug\quarto.Form1.resources
+D:\214szft\quarrto\quarto\quarto\obj\Debug\quarto.Game.resources
+D:\214szft\quarrto\quarto\quarto\obj\Debug\quarto.Properties.Resources.resources
+D:\214szft\quarrto\quarto\quarto\obj\Debug\quarto.csproj.GenerateResource.cache
+D:\214szft\quarrto\quarto\quarto\obj\Debug\quarto.csproj.CoreCompileInputs.cache
+D:\214szft\quarrto\quarto\quarto\obj\Debug\quarto.exe
+D:\214szft\quarrto\quarto\quarto\obj\Debug\quarto.pdb
