@@ -93,23 +93,22 @@ namespace quarto
             // kijonLbl
             // 
             this.kijonLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kijonLbl.Location = new System.Drawing.Point(12, 92);
+            this.kijonLbl.Location = new System.Drawing.Point(10, 92);
             this.kijonLbl.Name = "kijonLbl";
             this.kijonLbl.Size = new System.Drawing.Size(183, 25);
             this.kijonLbl.TabIndex = 2;
             this.kijonLbl.Text = "text";
             this.kijonLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.kijonLbl.Visible = false;
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Enabled = false;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(15, 120);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(180, 21);
             this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -117,8 +116,9 @@ namespace quarto
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(180, 40);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Valami okos szöveg amit később kell kitalálni";
+            this.button1.Text = "Bábu kiválasztása lock";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // p_0
             // 
