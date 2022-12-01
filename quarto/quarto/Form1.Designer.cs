@@ -51,19 +51,19 @@ namespace quarto
             // 
             // player1
             // 
-            this.player1.Location = new System.Drawing.Point(51, 148);
+            this.player1.Location = new System.Drawing.Point(55, 94);
             this.player1.Name = "player1";
             this.player1.Size = new System.Drawing.Size(100, 20);
             this.player1.TabIndex = 1;
-            this.player1.Text = "Player1";
+            this.player1.Text = "速度与激情";
             // 
             // player2
             // 
-            this.player2.Location = new System.Drawing.Point(218, 148);
+            this.player2.Location = new System.Drawing.Point(210, 94);
             this.player2.Name = "player2";
             this.player2.Size = new System.Drawing.Size(100, 20);
             this.player2.TabIndex = 2;
-            this.player2.Text = "Player2";
+            this.player2.Text = "早上好中国";
             // 
             // Form1
             // 
@@ -71,6 +71,7 @@ namespace quarto
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(354, 451);
             this.Controls.Add(this.player2);
             this.Controls.Add(this.player1);
