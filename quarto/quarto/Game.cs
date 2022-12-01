@@ -105,38 +105,7 @@ namespace quarto
 
         private void negyCheck(List<Cella> lista)
         {
-            /*
-            for (int i = 0; i < lista.Count; i++)
-            {
-                int counter = 0;
-                bool talalt = false;
-                for (int j = 0; j < lista.Count; j++)
-                {
-                    if (lista[i].Babu.Sotet == lista[j].Babu.Sotet)
-                    {
-                        counter++;
-                        if (counter == 4) Win();
-                    }
-                    if (lista[i].Babu.Szmotyi == lista[j].Babu.Szmotyi)
-                    {
-                        counter++;
-                        if (counter == 4) Win();
-                    }
-                    if (lista[i].Babu.Nagy == lista[j].Babu.Nagy)
-                    {
-                        counter++;
-                        if (counter == 4) Win();
-                    }
-                    if (lista[i].Babu.Karika == lista[j].Babu.Karika)
-                    {
-                        counter++;
-                        if (counter == 4) Win();
-                    }
-                    if (talalt) continue;
-                    else break;
-                }
-            }
-            */
+
         }
 
         private void Win()
