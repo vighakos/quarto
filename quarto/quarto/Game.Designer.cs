@@ -51,7 +51,6 @@ namespace quarto
             this.p_13 = new System.Windows.Forms.PictureBox();
             this.p_14 = new System.Windows.Forms.PictureBox();
             this.p_15 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.p_0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p_2)).BeginInit();
@@ -72,6 +71,7 @@ namespace quarto
             // 
             // p1Lbl
             // 
+            this.p1Lbl.BackColor = System.Drawing.Color.Transparent;
             this.p1Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.p1Lbl.Location = new System.Drawing.Point(12, 9);
             this.p1Lbl.Name = "p1Lbl";
@@ -82,6 +82,7 @@ namespace quarto
             // 
             // p2Lbl
             // 
+            this.p2Lbl.BackColor = System.Drawing.Color.Transparent;
             this.p2Lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.p2Lbl.Location = new System.Drawing.Point(12, 34);
             this.p2Lbl.Name = "p2Lbl";
@@ -92,6 +93,7 @@ namespace quarto
             // 
             // kijonLbl
             // 
+            this.kijonLbl.BackColor = System.Drawing.Color.Transparent;
             this.kijonLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.kijonLbl.Location = new System.Drawing.Point(10, 92);
             this.kijonLbl.Name = "kijonLbl";
@@ -312,17 +314,12 @@ namespace quarto
             this.p_15.TabStop = false;
             this.p_15.Click += new System.EventHandler(this.p_Valaszt);
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(15, 193);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(178, 178);
-            this.panel1.TabIndex = 21;
-            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(468, 386);
             this.Controls.Add(this.p_8);
             this.Controls.Add(this.p_9);
@@ -345,11 +342,11 @@ namespace quarto
             this.Controls.Add(this.kijonLbl);
             this.Controls.Add(this.p2Lbl);
             this.Controls.Add(this.p1Lbl);
-            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(484, 425);
             this.MinimumSize = new System.Drawing.Size(484, 425);
             this.Name = "Game";
+            this.Text = "Quarto";
             ((System.ComponentModel.ISupportInitialize)(this.p_0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p_2)).EndInit();
@@ -393,6 +390,5 @@ namespace quarto
         private System.Windows.Forms.PictureBox p_13;
         private System.Windows.Forms.PictureBox p_14;
         private System.Windows.Forms.PictureBox p_15;
-        private System.Windows.Forms.Panel panel1;
     }
 }
