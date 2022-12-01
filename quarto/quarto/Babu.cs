@@ -16,11 +16,21 @@ namespace quarto
         public Babu(int id, bool sotet, bool szmotyi, bool nagy, bool karika)
         {
             ID = id;
-            //Img = Image.FromFile($"{ID}.png");
+            Img = Image.FromFile($"img/{ID}.png");
             Sotet = sotet;
             Szmotyi = szmotyi;
             Nagy = nagy;
             Karika = karika;
+        }
+
+        public string Kiir()
+        {
+            string sotete = Sotet ? "Sötét" : "Világos",
+                   lyukase = Szmotyi ? "lyukas" : "lyuktalan",
+                   nagye = Nagy ? "nagy" : "kicsi",
+                   karikae = Karika ? "kör" : "négyzet";
+
+            return $"{ID}: {sotete} {lyukase} {nagye} {karikae}";
         }
     }
 }

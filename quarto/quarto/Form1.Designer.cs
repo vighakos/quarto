@@ -83,7 +83,7 @@ namespace quarto
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(370, 490);
             this.Name = "Form1";
-            this.Text = "gsdfgzuvfjghkopgfjkvdfdffuhfghjgfhgffrfrhjerzfhjdfdf";
+            this.Text = "Quarto";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Form1_HelpButtonClicked);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
