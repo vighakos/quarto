@@ -83,7 +83,6 @@ namespace quarto
                 }
             }
         }
-
         private void p_Valaszt(object sender, EventArgs e)
         {
             
