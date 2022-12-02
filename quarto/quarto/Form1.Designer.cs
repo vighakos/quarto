@@ -55,7 +55,7 @@ namespace quarto
             this.player1.Name = "player1";
             this.player1.Size = new System.Drawing.Size(100, 20);
             this.player1.TabIndex = 1;
-            this.player1.Text = "速度与激情";
+            this.player1.Text = "muksó";
             // 
             // player2
             // 
@@ -63,7 +63,7 @@ namespace quarto
             this.player2.Name = "player2";
             this.player2.Size = new System.Drawing.Size(100, 20);
             this.player2.TabIndex = 2;
-            this.player2.Text = "早上好中国";
+            this.player2.Text = "fazon";
             // 
             // Form1
             // 
@@ -84,6 +84,7 @@ namespace quarto
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(370, 490);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quarto";
             this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.Form1_HelpButtonClicked);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

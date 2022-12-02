@@ -9,12 +9,10 @@ namespace quarto
     class Player
     {
         public string Name;
-        public int Victories;
 
         public Player(string name)
         {
             Name = name;
-            Victories = 0;
         }
     }
 }

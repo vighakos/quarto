@@ -30,7 +30,7 @@ namespace quarto
                    nagye = Nagy ? "nagy" : "kicsi",
                    karikae = Karika ? "kör" : "négyzet";
 
-            return $"{ID}: {sotete} {lyukase} {nagye} {karikae}";
+            return $"{sotete} {lyukase} {nagye} {karikae}";
         }
     }
 }

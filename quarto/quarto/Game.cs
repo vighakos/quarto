@@ -33,11 +33,8 @@ namespace quarto
             currentPlayer = new Random().Next(0, 2) == 1 ? p1 : p2;
 
             babuk = new List<Babu>();
-            for (int i = 0; i < 16; i++)
-            {
+            for (int i = 0; i < 16; i++) 
                 babuk.Add(new Babu(i, Convert.ToBoolean(i / 8 % 2), Convert.ToBoolean(i / 4 % 2), Convert.ToBoolean(i / 2 % 2), Convert.ToBoolean(i % 2)));
-                comboBox1.Items.Add(babuk[i].Kiir());
-            }
 
             cellak = new List<Cella>();
             for (int i = 0; i < 4; i++)
@@ -46,7 +43,7 @@ namespace quarto
                 {
                     PictureBox uj = new PictureBox()
                     {
-                        Location = new Point(250 + j * 50, 10 + i * 50),
+                        Location = new Point(250 + j * 50, 50 + i * 50),
                         Size = new Size(40, 40),
                         BackColor = Color.White,
                         Name = $"{i}_{j}",
@@ -60,6 +57,9 @@ namespace quarto
             }
 
             lerakottBabuk = new List<Cella>();
+
+            p1Lbl.Text = $"{p1.Name} vs {p2.Name}";
+            valasztottLbl.Text = "Nincs kiválasztott bábu"; 
 
             UpdateLabels();
         }
@@ -76,7 +76,6 @@ namespace quarto
                     Babu selectedBabu = babuk.Find(x => x.ID == Convert.ToInt32(selectedPbox.Name.Split('_')[1]));
                     kattolt.Babu = selectedBabu;
                     kattolt.Pbox.Image = selectedBabu.Img;
-                    comboBox1.Items.RemoveAt(comboBox1.SelectedIndex);
                     babuk.Remove(selectedBabu);
                     kattolt.Szabad = false;
                     
@@ -85,6 +84,8 @@ namespace quarto
                     selectedPbox = null;
 
                     lerakottBabuk.Add(kattolt);
+
+                    valasztottLbl.Text = "Nincs kiválasztott bábu";
 
                     Check(kattolt);
 
@@ -96,21 +97,42 @@ namespace quarto
 
         private void Check(Cella kattolt)
         {
-            List<Cella> kattoltSor = lerakottBabuk.FindAll(x => x.Y == kattolt.Y);
-            List<Cella> kattoltOszlop = lerakottBabuk.FindAll(x => x.X == kattolt.X);
-
-            if (kattoltSor.Count == 4) negyCheck(kattoltSor);
-            if (kattoltOszlop.Count == 4) negyCheck(kattoltOszlop);
+            NegyCheck(lerakottBabuk.FindAll(x => x.X == kattolt.X));
+            NegyCheck(lerakottBabuk.FindAll(x => x.Y == kattolt.Y));
+            NegyCheck(lerakottBabuk.FindAll(x => x.X == x.Y));
+            NegyCheck(lerakottBabuk.FindAll(x => x.X + x.Y == 3));
         }
 
-        private void negyCheck(List<Cella> lista)
+        private void NegyCheck(List<Cella> lista)
         {
+            if (lista.Count == 4)
+            {
+                int counter = 0;
+                for (int i = 1; i < lista.Count; i++)
+                {
+                    if (lista[0].Babu.Sotet == lista[i].Babu.Sotet ||
+                        lista[0].Babu.Szmotyi == lista[i].Babu.Szmotyi ||
+                        lista[0].Babu.Nagy == lista[i].Babu.Nagy ||
+                        lista[0].Babu.Karika == lista[i].Babu.Karika)
+                    {
+                        counter++;
+                    }
+                }
 
+                if (counter == 3)
+                {
+                    foreach (Cella item in lista)
+                        item.Pbox.BackColor = Color.Green;
+
+                    Win();
+                }
+            }
         }
 
         private void Win()
         {
             MessageBox.Show($"{currentPlayer.Name} nyert");
+            Application.Restart();
         }
 
         private void p_Valaszt(object sender, EventArgs e)
@@ -126,7 +148,7 @@ namespace quarto
                 else if (selectedPbox == null) selectedPbox = item;
 
                 selectedPbox.BackColor = Color.Green;
-                comboBox1.SelectedItem = babuk.Find(x => x.ID.ToString() == selectedPbox.Name.Split('_')[1]).Kiir();
+                valasztottLbl.Text = babuk.Find(x => x.ID.ToString() == selectedPbox.Name.Split('_')[1]).Kiir();
             }
         }
 
@@ -149,15 +171,12 @@ namespace quarto
             Cella hover = cellak.Find(x => x.X == Convert.ToInt32(item.Name.Split('_')[0]) && x.Y == Convert.ToInt32(item.Name.Split('_')[1]));
 
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(hover.Pbox, hover.Babu == null ? "Üres" : hover.Babu.Kiir());
+            tt.SetToolTip(hover.Pbox, hover.Babu == null ? "Üres" : $"[{hover.X}, {hover.Y}]: {hover.Babu.Kiir()}");
         }
 
         private void UpdateLabels()
         {
-            p1Lbl.Text = $"{p1.Name}: {p1.Victories}";
-            p2Lbl.Text = $"{p2.Name}: {p2.Victories}";
-
-            kijonLbl.Text = $"{currentPlayer.Name} következik idk";
+            kijonLbl.Text = $"{currentPlayer.Name} következik";
         }
     }
 }
