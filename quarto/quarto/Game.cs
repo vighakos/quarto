@@ -171,7 +171,7 @@ namespace quarto
             Cella hover = cellak.Find(x => x.X == Convert.ToInt32(item.Name.Split('_')[0]) && x.Y == Convert.ToInt32(item.Name.Split('_')[1]));
 
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(hover.Pbox, hover.Babu == null ? "Üres" : $"[{hover.X}, {hover.Y}]: {hover.Babu.Kiir()}");
+            tt.SetToolTip(hover.Pbox, hover.Babu == null ? "Üres" : $"{hover.Babu.Kiir()}");
         }
 
         private void UpdateLabels()
