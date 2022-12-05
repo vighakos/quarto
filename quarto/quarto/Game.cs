@@ -89,6 +89,8 @@ namespace quarto
 
                     Check(kattolt);
 
+                    if (lerakottBabuk.Count == 16) Draw();
+
                     kovetkezo = true;
                     button1.Enabled = true;
                 }
@@ -107,32 +109,24 @@ namespace quarto
         {
             if (lista.Count == 4)
             {
-                int counter = 0;
+                int counter1 = 0, counter2 = 0, counter3 = 0, counter4 = 0;
                 for (int i = 1; i < lista.Count; i++)
                 {
-                    if (lista[0].Babu.Sotet == lista[i].Babu.Sotet ||
-                        lista[0].Babu.Szmotyi == lista[i].Babu.Szmotyi ||
-                        lista[0].Babu.Nagy == lista[i].Babu.Nagy ||
-                        lista[0].Babu.Karika == lista[i].Babu.Karika)
-                    {
-                        counter++;
-                    }
+                    if (lista[0].Babu.Sotet == lista[i].Babu.Sotet) counter1++;
+                    if (lista[0].Babu.Szmotyi == lista[i].Babu.Szmotyi) counter2++;
+                    if (lista[0].Babu.Nagy == lista[i].Babu.Nagy) counter3++;
+                    if (lista[0].Babu.Karika == lista[i].Babu.Karika) counter4++;
                 }
 
-                if (counter == 3)
+                label1.Text = $"counter1: {counter1}, counter2: {counter2}, counter3: {counter3}, counter4: {counter4}";
+
+                if (counter1 == 3 || counter2 == 3 || counter3 == 3 || counter4 == 3)
                 {
-                    foreach (Cella item in lista)
-                        item.Pbox.BackColor = Color.Green;
+                    foreach (Cella item in lista) item.Pbox.BackColor = Color.Green;
 
                     Win();
                 }
             }
-        }
-
-        private void Win()
-        {
-            MessageBox.Show($"{currentPlayer.Name} nyert");
-            Application.Restart();
         }
 
         private void p_Valaszt(object sender, EventArgs e)
@@ -170,13 +164,24 @@ namespace quarto
             PictureBox item = (PictureBox)sender;
             Cella hover = cellak.Find(x => x.X == Convert.ToInt32(item.Name.Split('_')[0]) && x.Y == Convert.ToInt32(item.Name.Split('_')[1]));
 
-            ToolTip tt = new ToolTip();
-            tt.SetToolTip(hover.Pbox, hover.Babu == null ? "Üres" : $"{hover.Babu.Kiir()}");
+            new ToolTip().SetToolTip(hover.Pbox, hover.Babu == null ? "Üres" : $"{hover.Babu.Kiir()}");
         }
 
         private void UpdateLabels()
         {
             kijonLbl.Text = $"{currentPlayer.Name} következik";
+        }
+
+        private void Win()
+        {
+            MessageBox.Show($"{currentPlayer.Name} nyert");
+            Application.Restart();
+        }
+
+        private void Draw()
+        {
+            MessageBox.Show("A meccs döntetlen!");
+            Application.Restart();
         }
     }
 }
