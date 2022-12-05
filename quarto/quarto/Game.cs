@@ -118,8 +118,6 @@ namespace quarto
                     if (lista[0].Babu.Karika == lista[i].Babu.Karika) counter4++;
                 }
 
-                label1.Text = $"counter1: {counter1}, counter2: {counter2}, counter3: {counter3}, counter4: {counter4}";
-
                 if (counter1 == 3 || counter2 == 3 || counter3 == 3 || counter4 == 3)
                 {
                     foreach (Cella item in lista) item.Pbox.BackColor = Color.Green;

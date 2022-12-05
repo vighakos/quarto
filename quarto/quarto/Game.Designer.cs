@@ -50,7 +50,6 @@ namespace quarto
             this.p_14 = new System.Windows.Forms.PictureBox();
             this.p_15 = new System.Windows.Forms.PictureBox();
             this.valasztottLbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.p_0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p_2)).BeginInit();
@@ -305,16 +304,6 @@ namespace quarto
             this.valasztottLbl.Text = "text";
             this.valasztottLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(22, 337);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(419, 40);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "text";
-            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,7 +311,6 @@ namespace quarto
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(468, 386);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.valasztottLbl);
             this.Controls.Add(this.p_8);
             this.Controls.Add(this.p_9);
@@ -391,6 +379,5 @@ namespace quarto
         private System.Windows.Forms.PictureBox p_14;
         private System.Windows.Forms.PictureBox p_15;
         private System.Windows.Forms.Label valasztottLbl;
-        private System.Windows.Forms.Label label1;
     }
 }
