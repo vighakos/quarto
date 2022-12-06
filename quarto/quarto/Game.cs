@@ -65,36 +65,34 @@ namespace quarto
         }
 
         private void Cella_Click(object sender, EventArgs e)
-        {            
-            if (!kovetkezo)
-            {
-                PictureBox item = (PictureBox)sender;
-                Cella kattolt = cellak.Find(x => x.X == Convert.ToInt32(item.Name.Split('_')[0]) && x.Y == Convert.ToInt32(item.Name.Split('_')[1]));
+        {
+            if (kovetkezo) return;
 
-                if (kattolt.Szabad)
-                {
-                    Babu selectedBabu = babuk.Find(x => x.ID == Convert.ToInt32(selectedPbox.Name.Split('_')[1]));
-                    kattolt.Babu = selectedBabu;
-                    kattolt.Pbox.Image = selectedBabu.Img;
-                    babuk.Remove(selectedBabu);
-                    kattolt.Szabad = false;
-                    
-                    selectedPbox.BackColor = Color.Transparent;
-                    selectedPbox.Visible = false;
-                    selectedPbox = null;
+            PictureBox item = (PictureBox)sender;
+            Cella kattolt = cellak.Find(x => x.X == Convert.ToInt32(item.Name.Split('_')[0]) && x.Y == Convert.ToInt32(item.Name.Split('_')[1]));
 
-                    lerakottBabuk.Add(kattolt);
+            if (!kattolt.Szabad) return;
 
-                    valasztottLbl.Text = "Nincs kiválasztott bábu";
+            Babu selectedBabu = babuk.Find(x => x.ID == Convert.ToInt32(selectedPbox.Name.Split('_')[1]));
+            kattolt.Babu = selectedBabu;
+            kattolt.Pbox.Image = selectedBabu.Img;
+            babuk.Remove(selectedBabu);
+            kattolt.Szabad = false;
 
-                    Check(kattolt);
+            selectedPbox.BackColor = Color.Transparent;
+            selectedPbox.Visible = false;
+            selectedPbox = null;
 
-                    if (lerakottBabuk.Count == 16) Draw();
+            lerakottBabuk.Add(kattolt);
 
-                    kovetkezo = true;
-                    button1.Enabled = true;
-                }
-            }
+            valasztottLbl.Text = "Nincs kiválasztott bábu";
+
+            Check(kattolt);
+
+            if (lerakottBabuk.Count == 16) Draw();
+
+            kovetkezo = true;
+            button1.Enabled = true;
         }
 
         private void Check(Cella kattolt)
@@ -107,41 +105,39 @@ namespace quarto
 
         private void NegyCheck(List<Cella> lista)
         {
-            if (lista.Count == 4)
+            if (lista.Count != 4) return;
+
+            int counter1 = 0, counter2 = 0, counter3 = 0, counter4 = 0;
+            for (int i = 1; i < lista.Count; i++)
             {
-                int counter1 = 0, counter2 = 0, counter3 = 0, counter4 = 0;
-                for (int i = 1; i < lista.Count; i++)
-                {
-                    if (lista[0].Babu.Sotet == lista[i].Babu.Sotet) counter1++;
-                    if (lista[0].Babu.Szmotyi == lista[i].Babu.Szmotyi) counter2++;
-                    if (lista[0].Babu.Nagy == lista[i].Babu.Nagy) counter3++;
-                    if (lista[0].Babu.Karika == lista[i].Babu.Karika) counter4++;
-                }
+                if (lista[0].Babu.Sotet == lista[i].Babu.Sotet) counter1++;
+                if (lista[0].Babu.Szmotyi == lista[i].Babu.Szmotyi) counter2++;
+                if (lista[0].Babu.Nagy == lista[i].Babu.Nagy) counter3++;
+                if (lista[0].Babu.Karika == lista[i].Babu.Karika) counter4++;
+            }
 
-                if (counter1 == 3 || counter2 == 3 || counter3 == 3 || counter4 == 3)
-                {
-                    foreach (Cella item in lista) item.Pbox.BackColor = Color.Green;
+            if (counter1 == 3 || counter2 == 3 || counter3 == 3 || counter4 == 3)
+            {
+                foreach (Cella item in lista) item.Pbox.BackColor = Color.Green;
 
-                    Win();
-                }
+                Win();
             }
         }
 
         private void p_Valaszt(object sender, EventArgs e)
-        {            
-            if (kovetkezo)
-            {
-                PictureBox item = (PictureBox)sender;
-                if (selectedPbox != null && item.Name != selectedPbox.Name)
-                {
-                    selectedPbox.BackColor = Color.Transparent;
-                    selectedPbox = item;
-                }
-                else if (selectedPbox == null) selectedPbox = item;
+        {
+            if (!kovetkezo) return;
 
-                selectedPbox.BackColor = Color.Green;
-                valasztottLbl.Text = babuk.Find(x => x.ID.ToString() == selectedPbox.Name.Split('_')[1]).Kiir();
+            PictureBox item = (PictureBox)sender;
+            if (selectedPbox != null && item.Name != selectedPbox.Name)
+            {
+                selectedPbox.BackColor = Color.Transparent;
+                selectedPbox = item;
             }
+            else if (selectedPbox == null) selectedPbox = item;
+
+            selectedPbox.BackColor = Color.Green;
+            valasztottLbl.Text = babuk.Find(x => x.ID.ToString() == selectedPbox.Name.Split('_')[1]).Kiir();
         }
 
         private void button1_Click(object sender, EventArgs e)
